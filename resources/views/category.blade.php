@@ -21,7 +21,7 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li ><a href="http://laravel-diplom-1.rdavydov.ru">Все товары</a></li>
-                <li  class="active" ><a href="http://laravel-diplom-1.rdavydov.ru/categories">Категории</a>
+                <li ><a href="http://laravel-diplom-1.rdavydov.ru/categories">Категории</a>
                 </li>
                 <li ><a href="http://laravel-diplom-1.rdavydov.ru/basket">В корзину</a></li>
                 <li><a href="http://laravel-diplom-1.rdavydov.ru/reset">Сбросить проект в начальное состояние</a></li>
@@ -37,32 +37,75 @@
 
 <div class="container">
     <div class="starter-template">
-        <div class="panel">
-            <a href="http://laravel-diplom-1.rdavydov.ru/mobiles">
-                <img src="http://laravel-diplom-1.rdavydov.ru/storage/categories/mobile.jpg">
-                <h2>Мобильные телефоны</h2>
-            </a>
-            <p>
-                В этом разделе вы найдёте самые популярные мобильные телефонамы по отличным ценам!
-            </p>
-        </div>
-        <div class="panel">
-            <a href="http://laravel-diplom-1.rdavydov.ru/portable">
-                <img src="http://laravel-diplom-1.rdavydov.ru/storage/categories/portable.jpg">
-                <h2>Портативная техника</h2>
-            </a>
-            <p>
-                Раздел с портативной техникой.
-            </p>
-        </div>
-        <div class="panel">
-            <a href="http://laravel-diplom-1.rdavydov.ru/appliances">
-                <img src="http://laravel-diplom-1.rdavydov.ru/storage/categories/appliance.jpg">
-                <h2>Бытовая техника</h2>
-            </a>
-            <p>
-                Раздел с бытовой техникой
-            </p>
+        <h1>
+            @if($category == 'mobiles')
+                Мобильные телефоны
+            @elseif($category == 'portable')
+                Портативная техника
+            @elseif($category == 'appliances')
+                Бытовая техника
+            @endif
+        </h1>
+        <p>
+            В этом разделе вы найдёте самые популярные мобильные телефонамы по отличным ценам!
+        </p>
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="http://laravel-diplom-1.rdavydov.ru/storage/products/iphone_x.jpg" alt="iPhone X 64GB">
+                    <div class="caption">
+                        <h3>iPhone X 64GB</h3>
+                        <p>71990 руб.</p>
+                        <p>
+                            <a href="http://laravel-diplom-1.rdavydov.ru/basket/1/add" class="btn btn-primary" role="button">В корзину</a>
+                            <a href="http://laravel-diplom-1.rdavydov.ru/mobiles/iphone_x_64" class="btn btn-default"
+                               role="button">Подробнее</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="http://laravel-diplom-1.rdavydov.ru/storage/products/iphone_x_silver.jpg" alt="iPhone X 256GB">
+                    <div class="caption">
+                        <h3>iPhone X 256GB</h3>
+                        <p>89990 руб.</p>
+                        <p>
+                            <a href="http://laravel-diplom-1.rdavydov.ru/basket/2/add" class="btn btn-primary" role="button">В корзину</a>
+                            <a href="http://laravel-diplom-1.rdavydov.ru/mobiles/iphone_x_256" class="btn btn-default"
+                               role="button">Подробнее</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="http://laravel-diplom-1.rdavydov.ru/storage/products/htc_one_s.png" alt="HTC One S">
+                    <div class="caption">
+                        <h3>HTC One S</h3>
+                        <p>12490 руб.</p>
+                        <p>
+                            <a href="http://laravel-diplom-1.rdavydov.ru/basket/3/add" class="btn btn-primary" role="button">В корзину</a>
+                            <a href="http://laravel-diplom-1.rdavydov.ru/mobiles/htc_one_s" class="btn btn-default"
+                               role="button">Подробнее</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="http://laravel-diplom-1.rdavydov.ru/storage/products/iphone_5.jpg" alt="iPhone 5SE">
+                    <div class="caption">
+                        <h3>iPhone 5SE</h3>
+                        <p>17221 руб.</p>
+                        <p>
+                            <a href="http://laravel-diplom-1.rdavydov.ru/basket/4/add" class="btn btn-primary" role="button">В корзину</a>
+                            <a href="http://laravel-diplom-1.rdavydov.ru/mobiles/iphone_5se" class="btn btn-default"
+                               role="button">Подробнее</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
