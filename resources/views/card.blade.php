@@ -1,13 +1,15 @@
 <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-        <img src="http://laravel-diplom-1.rdavydov.ru/storage/products/iphone_x.jpg" alt="iPhone X 64GB">
+        <img src="http://laravel-diplom-1.rdavydov.ru/storage/products/iphone_x.jpg" alt="{{ $item->name }}">
         <div class="caption">
-            <h3>iPhone X 64GB</h3>
-            <p>71990 руб.</p>
+            <h3>{{ $item->name }}</h3>
+            <p>{{ $item->price }}</p>
+            {{ $item->category->name }}
             <p>
-                <a href="{{ route('basket') }}/1/add" class="btn btn-primary" role="button">В
+                <a href="{{ route('basket') }}" class="btn btn-primary" role="button">В
                     корзину</a>
-                <a href="http://laravel-diplom-1.rdavydov.ru/mobiles/iphone_x_64" class="btn btn-default"
+
+                <a href="{{ route('product', [$item->category->code, $item->code]) }}" class="btn btn-default"
                     role="button">Подробнее</a>
             </p>
         </div>
