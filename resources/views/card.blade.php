@@ -6,12 +6,15 @@
             <p>{{ $item->price }}</p>
             {{ $item->category->name }}
             <p>
-                <a href="{{ route('basket') }}" class="btn btn-primary" role="button">В
-                    корзину</a>
+            <form action="{{ route('basket-add', $item) }}" method="POST">
+                <button type="submit" class="btn btn-primary">В корзину</button>
 
                 <a href="{{ route('product', [$item->category->code, $item->code]) }}" class="btn btn-default"
                     role="button">Подробнее</a>
-            </p>
+                </p>
+                @csrf
+            </form>
+            
         </div>
     </div>
 </div>
