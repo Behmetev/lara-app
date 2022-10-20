@@ -27,10 +27,15 @@
                     </li>
                     <li><a href="{{ route('basket') }}">В корзину</a></li>
                 </ul>
-
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/admin/home">Панель администратора</a></li>
-                </ul>
+                @guest
+                    <li><a href="{{ route('logout') }}">Войти</a></li>
+                @endguest
+                @auth
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="{{ route('home') }}">Панель администратора</a></li>
+                        <li><a href="{{ route('get-logout') }}">Выйти</a></li>
+                    </ul>
+                @endauth
             </div>
         </div>
     </nav>
