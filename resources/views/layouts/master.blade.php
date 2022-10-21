@@ -22,20 +22,22 @@
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('index') }}">Все товары</a></li>
-                    <li class="active"><a href="{{ route('categories') }}">Категории</a>
+                    <li class="active"><a href="{{ route('index') }}">Все товары</a></li>
+                    <li><a href="{{ route('categories') }}">Категории</a>
                     </li>
                     <li><a href="{{ route('basket') }}">В корзину</a></li>
                 </ul>
-                @guest
-                    <li><a href="{{ route('logout') }}">Войти</a></li>
-                @endguest
-                @auth
-                    <ul class="nav navbar-nav navbar-right">
+
+                <ul class="nav navbar-nav navbar-right">
+                    @guest
+                        <li><a href="{{ route('login') }}">Панель администратора</a></li>
+                    @endguest
+
+                    @auth
                         <li><a href="{{ route('home') }}">Панель администратора</a></li>
                         <li><a href="{{ route('get-logout') }}">Выйти</a></li>
-                    </ul>
-                @endauth
+                    @endauth
+                </ul>
             </div>
         </div>
     </nav>
