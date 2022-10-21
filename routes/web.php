@@ -22,8 +22,10 @@ Auth::routes([
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('get-logout');
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('/orders', 'App\Http\Controllers\OrderController@index')->name('home');
+Route::group([
+    'middleware' => 'auth'
+], function () {
+    Route::get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->name('home');
 });
 
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('index');
