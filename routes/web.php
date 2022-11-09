@@ -20,12 +20,15 @@ Auth::routes([
     'verify' => false
 ]);
 
-Route::get('/logout', 'Auth\LoginController@logout')->name('get-logout');
+Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('get-logout');
 
 Route::group([
-    'middleware' => 'auth'
+    'middleware' => 'auth',
+    //'namespace' => "Admin"
 ], function () {
-    Route::get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->name('home');
+    Route::group(["middleware" => "is_admin"], function () {
+        Route::get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->name('home');
+    });
 });
 
 Route::get('/', 'App\Http\Controllers\MainController@index')->name('index');
